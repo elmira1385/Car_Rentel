@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
-body{
+body {
   height: 100vh;
-
+  background-color: #f1f5f9;
+  font-family: "Outfit", sans-serif;
 }
-#root{
+#root {
   height: 100%;
 }
