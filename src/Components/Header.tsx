@@ -7,7 +7,7 @@ import useTrueOrFalse from "../store/useTrueOrFalse";
 const Header = () => {
   const { isOpen, setIsOpen } = useTrueOrFalse();
   return (
-    <header className="flex w-full  h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300">
+    <header className="flex w-full  h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]">
       <img src={headerIcon} alt="" />
       <button
         onClick={() => {
@@ -26,9 +26,9 @@ const Header = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="#949494"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
@@ -39,7 +39,7 @@ const Header = () => {
       </button>
       <div
         className={clsx(
-          "fixed flex flex-col gap-6 items-start top-16 bg-[#f1f5f9] w-full h-full p-4 transition-all duration-300",
+          "fixed flex flex-col gap-6 items-start top-16 z-50 bg-[#f1f5f9] w-full h-full p-4 transition-all duration-300",
           {
             "-right-full": !isOpen,
             "right-0": isOpen,

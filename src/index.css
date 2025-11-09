@@ -2,7 +2,6 @@
 @import "tailwindcss";
 body {
   height: 100vh;
-  background-color: #f1f5f9;
   font-family: "Outfit", sans-serif;
 }
 #root {

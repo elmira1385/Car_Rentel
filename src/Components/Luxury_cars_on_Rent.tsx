@@ -2,7 +2,7 @@ import React from "react";
 import mainCar from "../images/main_car.png"
 const Luxury_cars_on_Rent = () => {
   return (
-    <div className="flex flex-col justify-center items-center pt-30 gap-16">
+    <div className=" bg-[#f1f5f9] flex flex-col justify-center items-center py-30 gap-16">
     <div className="flex flex-col justify-center items-center gap-12 px-14">
       <div>
         <p className="text-[36px] font-semibold ">Luxury cars on Rent</p>
@@ -60,18 +60,18 @@ const Luxury_cars_on_Rent = () => {
               <path
                 d="M10.626 10.6259L14.7088 14.7092"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M8.96293 11.7488C11.6387 10.6116 12.886 7.52063 11.7488 4.84487C10.6116 2.16912 7.52063 0.921849 4.84488 2.05902C2.16913 3.19619 0.921857 6.28717 2.05902 8.96292C3.19619 11.6387 6.28718 12.8859 8.96293 11.7488Z"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
 
@@ -79,7 +79,6 @@ const Luxury_cars_on_Rent = () => {
           </button>
         </div>
       </div>
-      
     </div>
     <div>
         <img className="max-h-74" src={mainCar} alt="" />
