@@ -9,7 +9,7 @@ type TcommentType={
 }
 const Comment = ({firstName,address,image,children}:TcommentType) => {
   return (
-    <div className="flex flex-col gap-4 p-6 shadow-xl rounded-2xl">
+    <div className="flex flex-col gap-4 p-6 shadow-xl rounded-2xl sm:w-full">
         <div className="flex gap-2  items-center">
             <div>
                 <img className="w-12 h-12 " src={image} alt="" />

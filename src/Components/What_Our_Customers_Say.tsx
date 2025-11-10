@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "./comment";
+import Comment from "./Comment";
 
 const What_Our_Customers_Say = () => {
   return (
@@ -11,7 +11,7 @@ const What_Our_Customers_Say = () => {
           accommodations around the world.
         </p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:px-42 sm:gap-8">
        <Comment image="./src/images/women1.png" firstName="Emma Rodriguez" address="Barcelona, Spain">
        "I've rented cars from various companies, but the experience with CarRental was exceptional."
        </Comment>

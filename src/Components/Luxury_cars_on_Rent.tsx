@@ -18,13 +18,13 @@ const Luxury_cars_on_Rent = () => {
       }}
       className=" bg-[#f1f5f9] flex flex-col justify-center items-center py-30 gap-16"
     >
-      <div className="flex flex-col justify-center items-center gap-12 px-14">
+      <div className="flex flex-col  justify-center items-center gap-12 px-14">
         <div>
           <p className="text-[36px] font-semibold ">Luxury cars on Rent</p>
         </div>
-        <div className="flex flex-col items-start w-full gap-4 bg-white p-6 rounded-xl shadow-xl">
-          <div className="flex flex-col items-start w-full gap-10 ">
-            <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col sm:pl-10 sm:flex-row sm:rounded-full sm:gap-20 items-start w-full gap-4 bg-white p-6 rounded-xl shadow-xl">
+          <div className="flex flex-col  sm:flex-row items-start w-full gap-10 ">
+            <div className="flex flex-col sm:flex  gap-2 ">
               <select name="pickup_location" id="pickup_location">
                 <option id="pickup_location" value="">
                   Pickup Location
@@ -42,11 +42,11 @@ const Luxury_cars_on_Rent = () => {
                   Chicago
                 </option>
               </select>
-              <span className="text-gray-500 text-[14px]">
+              <span className="text-gray-500  text-[14px]">
                 Please select location
               </span>
             </div>
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col sm:flex gap-2 ">
               <label htmlFor="Pickup-Date">Pick-up Date</label>
               <input
                 className="text-gray-500 text-[14px]"
@@ -54,7 +54,7 @@ const Luxury_cars_on_Rent = () => {
                 type="date"
               />
             </div>
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col sm:flex gap-2 ">
               <label htmlFor="Return-Date">Return Date</label>
               <input
                 className="text-gray-500 text-[14px]"

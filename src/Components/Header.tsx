@@ -2,29 +2,44 @@ import React, { useState } from "react";
 import headerHamber from "../images/download.svg";
 import headerIcon from "../images/logo-CF3gF4eH.svg";
 import { clsx } from "clsx";
+import { useNavigate } from "react-router";
 import useTrueOrFalse from "../store/useTrueOrFalse";
-import { motion } from "motion/react";
+import search from "../images/search.svg"
 
 const Header = () => {
   const { isOpen, setIsOpen } = useTrueOrFalse();
+  const navigate =useNavigate()
   return (
-    <motion.header
-      initial={{
-        translateY: "-100%",
-      }}
-      transition={{
-        duration: 0.2,
-      }}
-      whileInView={{
-        translateY: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      className="flex w-full  h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]"
+    <header
+      
+      className="flex w-full sm:justify-around sm:h-[75px] h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]"
     >
       <img src={headerIcon} alt="" />
-      <button
+      <div className="hidden sm:flex gap-8  justify-center items-center">
+        <ul className="sm:flex gap-8 *:text-gray-600">
+            <li onClick={()=>{
+            navigate("/")
+            setIsOpen(false)
+          }}>Home</li>
+          <li onClick={()=>{
+            navigate("/cars")
+            setIsOpen(false)
+          }}>Cars</li>
+          <li onClick={()=>{
+            navigate("/my-bookings")
+            setIsOpen(false)
+          }}>My Booking</li>
+        </ul>
+        <div className="sm:flex gap-2 border px-2 py-1 rounded-2xl border-gray-300">
+          <input className="placeholder:text-gray-500 outline-0" placeholder="search cars" type="text" />
+           <img src={search} alt="" />
+        </div>
+        <div className="sm:flex gap-6">
+            <button className="text-gray-600">List cars</button>
+            <button className="text-white bg-[#2563eb] px-8 py-2 rounded-lg">Login</button>
+        </div>
+      </div>
+      <button className="sm:hidden"
         onClick={() => {
           if (isOpen) {
             setIsOpen(false);
@@ -54,24 +69,33 @@ const Header = () => {
       </button>
       <div
         className={clsx(
-          "fixed flex flex-col gap-6 items-start top-16 z-50 bg-[#f1f5f9] w-full h-full p-4 transition-all duration-300",
+          "fixed  flex flex-col gap-6 items-start top-16 z-50 bg-[#f1f5f9] w-full h-full p-4 transition-all duration-300",
           {
             "-right-full": !isOpen,
             "right-0": isOpen,
           }
         )}
       >
-        <ul className="flex flex-col gap-4  *:text-[16px] *:text-gray-600">
-          <li>Home</li>
-          <li>Cars</li>
-          <li>My Booking</li>
+        <ul className="flex flex-col gap-4  *:text-[16px] *:text-gray-600 *:cursor-pointer">
+          <li onClick={()=>{
+            navigate("/")
+            setIsOpen(false)
+          }}>Home</li>
+          <li onClick={()=>{
+            navigate("/cars")
+            setIsOpen(false)
+          }}>Cars</li>
+          <li onClick={()=>{
+            navigate("/my-bookings")
+            setIsOpen(false)
+          }}>My Booking</li>
           <li>List Cars</li>
         </ul>
         <button className="bg-[#2563eb] rounded-lg text-white px-8 py-2">
           Login
         </button>
       </div>
-    </motion.header>
+    </header>
   );
 };
 
