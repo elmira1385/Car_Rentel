@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
 import clsx from "clsx";
+import { motion } from "motion/react";
+import { useNavigate } from "react-router";
 
 type postsType = {
   brand: string;
@@ -24,6 +26,7 @@ type postsType = {
 
 const Featured_Vehicles = () => {
   const [post, setPost] = useState<postsType[]>([]);
+  const nagetive=useNavigate()
   const getPost = async () => {
     const { data } = await axios("/api/user/cars");
     setPost(data.cars);
@@ -42,7 +45,17 @@ const Featured_Vehicles = () => {
       </div>
       <div className="grid grid-cols-1 grid-rows-6 gap-y-8">
         {post.slice(0, 6).map((item) => (
-          <div key={item._id} className="flex flex-col ">
+          <motion.div initial={
+            {
+              opacity:0
+            }
+          } transition={{
+            duration:3
+          }} whileInView={{
+            opacity:1
+          }} viewport={{
+            once:true
+          }} key={item._id} className="flex flex-col ">
             <div className="relative">
               <img
                 className="rounded-t-2xl w-full h-[197px] object-cover"
@@ -158,12 +171,14 @@ const Featured_Vehicles = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="px-6 py-2 border border-gray-400 rounded-md hover:bg-[#f1f5f9]">
-          <p  className="flex gap-2 items-center justify-center">
+        <button onClick={()=>{
+         nagetive("/cars");
+        }} className="px-6 py-2 border border-gray-400 rounded-md hover:bg-[#f1f5f9]">
+          <p className="flex gap-2 items-center justify-center">
             Explore all cars
             <span>
               <svg

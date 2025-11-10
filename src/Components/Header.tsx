@@ -3,11 +3,26 @@ import headerHamber from "../images/download.svg";
 import headerIcon from "../images/logo-CF3gF4eH.svg";
 import { clsx } from "clsx";
 import useTrueOrFalse from "../store/useTrueOrFalse";
+import { motion } from "motion/react";
 
 const Header = () => {
   const { isOpen, setIsOpen } = useTrueOrFalse();
   return (
-    <header className="flex w-full  h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]">
+    <motion.header
+      initial={{
+        translateY: "-100%",
+      }}
+      transition={{
+        duration: 0.2,
+      }}
+      whileInView={{
+        translateY: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className="flex w-full  h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]"
+    >
       <img src={headerIcon} alt="" />
       <button
         onClick={() => {
@@ -52,9 +67,11 @@ const Header = () => {
           <li>My Booking</li>
           <li>List Cars</li>
         </ul>
-        <button className="bg-[#2563eb] rounded-lg text-white px-8 py-2">Login</button>
+        <button className="bg-[#2563eb] rounded-lg text-white px-8 py-2">
+          Login
+        </button>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
