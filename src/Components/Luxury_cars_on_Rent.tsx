@@ -1,26 +1,15 @@
 import React from "react";
 import mainCar from "../images/main_car.png"
-import { motion } from "motion/react";
+
 const Luxury_cars_on_Rent = () => {
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      transition={{
-        duration: 2,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-      className=" bg-[#f1f5f9] flex flex-col justify-center items-center py-30 gap-16"
+    <div
+    
+      className=" bg-[#f1f5f9] flex flex-col justify-center items-center sm:py-20 py-30 gap-16"
     >
-      <div className="flex flex-col  justify-center items-center gap-12 px-14">
+      <div className="flex flex-col  justify-center items-center gap-12 px-14 ">
         <div>
-          <p className="text-[36px] font-semibold ">Luxury cars on Rent</p>
+          <p className="text-[36px] font-semibold sm:text-[46px] ">Luxury cars on Rent</p>
         </div>
         <div className="flex flex-col sm:pl-10 sm:flex-row sm:rounded-full sm:gap-20 items-start w-full gap-4 bg-white p-6 rounded-xl shadow-xl">
           <div className="flex flex-col  sm:flex-row items-start w-full gap-10 ">
@@ -64,7 +53,7 @@ const Luxury_cars_on_Rent = () => {
             </div>
           </div>
           <div>
-            <button className="flex gap-2 bg-[#2563EB] items-center justify-center px-8 py-3 rounded-full">
+            <button className="flex hover:scale-105 transition-all cursor-pointer hover:bg-blue-700 gap-2 bg-[#2563EB] items-center justify-center px-8 py-3 rounded-full">
               <svg
                 width="16"
                 height="16"
@@ -90,7 +79,7 @@ const Luxury_cars_on_Rent = () => {
                 />
               </svg>
 
-              <p className="text-white">Search</p>
+              <p className="text-white ">Search</p>
             </button>
           </div>
         </div>
@@ -98,7 +87,7 @@ const Luxury_cars_on_Rent = () => {
       <div>
         <img className="max-h-74" src={mainCar} alt="" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

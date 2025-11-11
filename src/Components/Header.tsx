@@ -2,21 +2,26 @@ import React, { useState } from "react";
 import headerHamber from "../images/download.svg";
 import headerIcon from "../images/logo-CF3gF4eH.svg";
 import { clsx } from "clsx";
-import { useNavigate } from "react-router";
-import useTrueOrFalse from "../store/useTrueOrFalse";
+import { useLocation, useNavigate } from "react-router";
 import search from "../images/search.svg"
+import useTrueOrFalse from "../store/useTrueOrFalse";
+import Login from "./Login";
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useTrueOrFalse();
+  const [ isOpen, setIsOpen ] = useState(false);
+   const{isOpenLogin,setIsOpenLogin}=useTrueOrFalse()
   const navigate =useNavigate()
+  const location=useLocation()
   return (
     <header
       
-      className="flex w-full sm:justify-around sm:h-[75px] h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 bg-[#f1f5f9]"
+      className={clsx("flex w-full sm:justify-around sm:h-[75px] h-[65px] justify-between items-center px-[18px] border-b border-b-gray-300 ",{
+        "bg-[#f1f5f9]":location.pathname==="/"
+      })}
     >
-      <img src={headerIcon} alt="" />
+      <img className="hover:scale-105 transition-all cursor-pointer" src={headerIcon} alt="" />
       <div className="hidden sm:flex gap-8  justify-center items-center">
-        <ul className="sm:flex gap-8 *:text-gray-600">
+        <ul className="sm:flex gap-8 *:text-gray-600 *:cursor-pointer">
             <li onClick={()=>{
             navigate("/")
             setIsOpen(false)
@@ -35,8 +40,11 @@ const Header = () => {
            <img src={search} alt="" />
         </div>
         <div className="sm:flex gap-6">
-            <button className="text-gray-600">List cars</button>
-            <button className="text-white bg-[#2563eb] px-8 py-2 rounded-lg">Login</button>
+            <button className="text-gray-600 cursor-pointer">List cars</button>
+            <button onClick={()=>{
+              setIsOpenLogin(true)
+            }} 
+             className="text-white cursor-pointer bg-[#2563eb] hover:bg-blue-700 px-8 py-2 rounded-lg">Login</button>
         </div>
       </div>
       <button className="sm:hidden"
@@ -91,7 +99,10 @@ const Header = () => {
           }}>My Booking</li>
           <li>List Cars</li>
         </ul>
-        <button className="bg-[#2563eb] rounded-lg text-white px-8 py-2">
+        <button onClick={()=>{
+              setIsOpenLogin(true)
+              setIsOpen(false)
+            }} className="bg-[#2563eb] rounded-lg text-white px-8 py-2">
           Login
         </button>
       </div>

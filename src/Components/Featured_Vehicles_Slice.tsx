@@ -35,10 +35,20 @@ const Featured_Vehicles_Slice = () => {
     getPost();
   }, []);
   return (
-    <div className="flex flex-col gap-20 px-6 py-24 bg-white">
+    <motion.div initial={
+            {
+              opacity:0
+            }
+          } transition={{
+            duration:3
+          }} whileInView={{
+            opacity:1
+          }} viewport={{
+            once:true
+          }} className="flex flex-col gap-20 px-6 py-24 bg-white">
       <div className="flex flex-col gap-2 justify-center items-center">
-        <p className="text-[36px] font-semibold">Featured Vehicles</p>
-        <p className="text-center text-[14px] text-gray-500">
+        <p className="text-[36px] font-semibold sm:text-[40px]">Featured Vehicles</p>
+        <p className="text-center text-[14px] sm:text-[16px] text-gray-500">
           Explore our selection of premium vehicles available for your next
           adventure.
         </p>
@@ -207,7 +217,7 @@ const Featured_Vehicles_Slice = () => {
           </p>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

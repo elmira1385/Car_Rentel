@@ -1,13 +1,13 @@
 import { create } from 'zustand'
 
 type trueOrFalse = {
-  isOpen: boolean
-  setIsOpen: (v:boolean) => void
+  isOpenLogin: boolean
+  setIsOpenLogin: (v:boolean) => void
 }
 
 const useTrueOrFalse = create<trueOrFalse>((set) => ({
-  isOpen: false,
-  setIsOpen: (v) => set(() => ({ isOpen:v })),
+  isOpenLogin: false,
+  setIsOpenLogin: (v) => set(() => ({ isOpenLogin:v })),
 }))
 export default useTrueOrFalse
 

@@ -1,6 +1,6 @@
 import React from "react";
 import star from "../images/Group 5182.png"
-
+import { motion } from "motion/react";
 type TcommentType={
     firstName:string,
     address:string
@@ -9,7 +9,17 @@ type TcommentType={
 }
 const Comment = ({firstName,address,image,children}:TcommentType) => {
   return (
-    <div className="flex flex-col gap-4 p-6 shadow-xl rounded-2xl sm:w-full">
+    <motion.div initial={
+            {
+              opacity:0
+            }
+          } transition={{
+            duration:1
+          }} whileInView={{
+            opacity:1
+          }} viewport={{
+            once:true
+          }} className="flex flex-col gap-4 p-6 shadow-xl rounded-2xl sm:w-full hover:-translate-y-1 duration-300">
         <div className="flex gap-2  items-center">
             <div>
                 <img className="w-12 h-12 " src={image} alt="" />
@@ -25,7 +35,7 @@ const Comment = ({firstName,address,image,children}:TcommentType) => {
         <div className="text-gray-500">
            {children}
         </div>
-    </div>
+    </motion.div>
   )
 };
 

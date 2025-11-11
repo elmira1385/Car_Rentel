@@ -6,11 +6,13 @@ import What_Our_Customers_Say from '../Components/What_Our_Customers_Say'
 import News from '../Components/News'
 import Footer from '../Components/Footer'
 import Featured_Vehicles_Slice from '../Components/Featured_Vehicles_Slice'
+import Login from '../Components/Login'
 
 const Home = () => {
   return (
-   <div className='flex flex-col '>
+   <div >
    <Header/>
+    <Login/>
    <Luxury_cars_on_Rent/>
    <Featured_Vehicles_Slice/>
    <Banner/>

@@ -17,23 +17,25 @@ const Banner = () => {
           List your car
         </button>
       </div>
-      <div>
-        <motion.img
-          initial={{
-            translateX: "100%",
+      <div className="w-full flex justify-center overflow-hidden">
+        <motion.div initial={{
+            x:"20%"
           }}
           transition={{
             duration: 1,
           }}
           whileInView={{
-            translateX: 0,
+            x:0
           }}
           viewport={{
             once: true,
-          }}
+          }}>
+        <img
+          
           src={bannerCar}
           alt=""
         />
+      </motion.div>
       </div>
     </div>
   );

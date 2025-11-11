@@ -1,12 +1,23 @@
 import React from "react";
 import logoFooter from "../images/logo-CF3gF4eH.svg";
+import { motion } from "motion/react";
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-2 pb-10 px-6">
-      <div className="flex flex-col gap-10">
+    <motion.div initial={
+                {
+                  opacity:0
+                }
+              } transition={{
+                duration:1
+              }} whileInView={{
+                opacity:1
+              }} viewport={{
+                once:true
+              }} className="flex flex-col gap-2 pb-10 px-6 sm:px-30 sm:pb-3 sm:pt-30">
+      <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
         <div className="flex flex-col gap-4 items-start ">
           <img className="h-8" src={logoFooter} alt="" />
-          <p className="text-[14px] text-gray-500 pr-18">
+          <p className="text-[14px] text-gray-500 pr-18 sm:w-100">
             Premium car rental service with a wide selection of luxury and
             everyday vehicles for all your driving needs.
           </p>
@@ -125,7 +136,7 @@ const Footer = () => {
       <div className="py-6">
         <hr className="text-gray-400" />
       </div>
-      <div className="flex flex-col gap-2 justify-center items-center">
+      <div className="flex flex-col gap-2 justify-center items-center sm:flex-row sm:justify-between">
          <p className="text-gray-500">© 2025 CarRental. All rights reserved.</p>
          <ul className="flex gap-6 text-gray-500">
             <li>Terms</li>
@@ -133,7 +144,7 @@ const Footer = () => {
             <li>Cookies</li>
          </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
