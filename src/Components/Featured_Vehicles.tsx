@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
 import clsx from "clsx";
 import { motion } from "motion/react";
+import { useSearch } from "../store/useSearch";
 
 
 type postsType = {
@@ -26,6 +27,7 @@ type postsType = {
 
 const Featured_Vehicles = () => {
   const [post, setPost] = useState<postsType[]>([]);
+  const {search}= useSearch()
   const getPost = async () => {
     const { data } = await axios("/api/user/cars");
     setPost(data.cars);
@@ -38,7 +40,9 @@ const Featured_Vehicles = () => {
     <p className="pt-20 px-6 pb-6  sm:px-40 text-gray-400">Showing 8 cars</p>
     <div className="grid grid-cols-1 sm:pb-60 sm:grid-cols-3 sm:grid-rows-2 grid-rows-6 gap-y-8 px-6 pb-30 sm:gap-x-8 sm:px-40">
         
-            {post.map((item) => (
+            {post.filter((card)=>(
+             card.brand.toLocaleLowerCase().includes(search)
+            )).map((item) => (
               <motion.div initial={
                 {
                   opacity:0
