@@ -9,7 +9,7 @@ const Footer = () => {
                 }
               } transition={{
                 duration:1
-              }} whileInView={{
+              }} animate={{
                 opacity:1
               }} viewport={{
                 once:true
