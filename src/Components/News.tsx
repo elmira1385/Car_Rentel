@@ -20,7 +20,7 @@ const News = () => {
           discounts
         </p>
       </div>
-      <form className="flex px-4 sm:w-200 ">
+      <form className="flex sm:w-200 ">
         <input className="border outline-0 border-gray-300 p-3 flex-1 rounded-l-md" placeholder="Enter your email id" type="email" />
         <button className="px-8 py-2 bg-[#2563eb] text-white rounded-r-md" type="submit">Subscribe</button>
       </form>
