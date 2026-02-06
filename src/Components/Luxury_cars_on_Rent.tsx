@@ -1,4 +1,4 @@
-import React from "react";
+
 import mainCar from "../images/main_car.png"
 
 const Luxury_cars_on_Rent = () => {

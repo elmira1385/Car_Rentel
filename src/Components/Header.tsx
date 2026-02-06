@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import headerHamber from "../images/download.svg";
 import headerIcon from "../images/logo-CF3gF4eH.svg";
 import { clsx } from "clsx";
 import { useLocation, useNavigate } from "react-router";
 import search from "../images/search.svg"
 import useTrueOrFalse from "../store/useTrueOrFalse";
-import Login from "./Login";
+
 
 const Header = () => {
   const [ isOpen, setIsOpen ] = useState(false);
-   const{isOpenLogin,setIsOpenLogin}=useTrueOrFalse()
+   const{setIsOpenLogin}=useTrueOrFalse()
   const navigate =useNavigate()
   const location=useLocation()
   return (

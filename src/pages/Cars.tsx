@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../Components/Header'
 import Featured_Vehicles from '../Components/Featured_Vehicles'
 import Available_Cars from '../Components/Available_Cars'

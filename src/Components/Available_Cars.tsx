@@ -1,4 +1,4 @@
-import React from 'react'
+
 import searchs from "../images/search.svg"
 import ghiff from "../images/ghif.svg"
 import { useSearch } from '../store/useSearch'

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../Components/Header'
 import Luxury_cars_on_Rent from '../Components/Luxury_cars_on_Rent'
 import Banner from '../Components/Banner'

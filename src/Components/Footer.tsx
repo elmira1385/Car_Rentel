@@ -1,4 +1,4 @@
-import React from "react";
+
 import logoFooter from "../images/logo-CF3gF4eH.svg";
 import { motion } from "motion/react";
 const Footer = () => {

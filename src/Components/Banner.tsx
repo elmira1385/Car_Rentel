@@ -1,4 +1,4 @@
-import React from "react";
+
 import bannerCar from "../images/banner_car_image.png"
 import { motion } from "motion/react";
 const Banner = () => {
