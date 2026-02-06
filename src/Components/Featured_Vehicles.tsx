@@ -37,7 +37,7 @@ const Featured_Vehicles = () => {
   }, []);
   return (
     <>
-    <p className="pt-20 px-6 pb-6  sm:px-40 text-gray-400">Showing 8 cars</p>
+    <p id="car" className=" pt-20 px-6 pb-6  sm:px-40 text-gray-400">Showing 8 cars</p>
     <div className="grid grid-cols-1 sm:pb-60 sm:grid-cols-3 sm:grid-rows-2 grid-rows-6 gap-y-8 px-6 pb-30 sm:gap-x-8 sm:px-40">
         
             {post.filter((card)=>(

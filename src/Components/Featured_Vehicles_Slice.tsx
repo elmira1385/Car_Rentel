@@ -35,7 +35,7 @@ const Featured_Vehicles_Slice = () => {
     getPost();
   }, []);
   return (
-    <motion.div initial={
+    <motion.div id="car" initial={
             {
               opacity:0
             }

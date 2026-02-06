@@ -39,8 +39,8 @@ const Header = () => {
           <input className="placeholder:text-gray-500 outline-0" placeholder="search cars" type="text" />
            <img src={search} alt="" />
         </div>
-        <div className="sm:flex gap-6">
-            <button className="text-gray-600 cursor-pointer">List cars</button>
+        <div className="sm:flex gap-6 justify-center items-center">
+            <a href="#car" className="text-gray-600 cursor-pointer">List cars</a>
             <button onClick={()=>{
               setIsOpenLogin(true)
             }} 
